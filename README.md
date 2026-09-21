@@ -73,3 +73,21 @@ message = “Database connection timeout”
 
 #Task 3
 A limitation of the current detection approach is that it is purely threshold-based and does not model time-series context or multi-signal severity beyond simple comparisons. A useful improvement would be to detect sustained abnormal patterns over consecutive samples and incorporate ERROR log severity more explicitly into the scoring logic.
+
+#Task 4
+Changed consumer_topic = EventTopic(consumer.name) to consumer_topic = EventTopic(producer_topic.name)       ;(in aiops_pipeline.py)
+Edited for event in result['anomalies_detected']: (in aiops_pipeline.py)
+
+The execution result is:
+Records processed: 10
+Anomalies detected: 2
+The anomaly objects are successfully created and displayed
+Event delivery through the same topic to the consumer is not fully complete in the current code because the producer and consumer are attached to different topic instances.
+
+#Task 5
+ if record["log_level"] == "ERROR":
+            reasons.append("Error log detected")
+remove consumer_topic and edit consumer
+    #consumer_topic = EventTopic(producer_topic.name)
+
+    consumer = EventConsumer(producer_topic)

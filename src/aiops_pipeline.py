@@ -21,8 +21,10 @@ def run_pipeline(file_path):
     producer = EventProducer(producer_topic)
 
     # INTENTIONAL ASSESSMENT ISSUE #3
-    consumer_topic = EventTopic(producer_topic.name)
-    consumer = EventConsumer(consumer_topic)
+    #consumer_topic = EventTopic(producer_topic.name)
+
+    consumer = EventConsumer(producer_topic)
+
 
     detected_events = []
 
