@@ -20,7 +20,7 @@ Good luck!
 We are monitoring a payment service based on certain parameters trying to identify the actual problem if a request is timed out. The purpose of AIOPS is to automate the error detection work and to detect anomalies in the metrices to identify the reason behind failed services.
 
 #Task 2
-1) The numeric operational metrics are:
+1)The numeric operational metrics are:
 response_time_ms:Measures latency for each request.
 cpu_percent:CPU utilization percentage.
 memory_percent:Memory utilization percentage.
@@ -70,4 +70,4 @@ cpu_percent = 94
 memory_percent = 91
 log_level = ERROR
 message = “Database connection timeout”
-These are clearly anomalous because they combine:
+
