@@ -71,3 +71,5 @@ memory_percent = 91
 log_level = ERROR
 message = “Database connection timeout”
 
+#Task 3
+A limitation of the current detection approach is that it is purely threshold-based and does not model time-series context or multi-signal severity beyond simple comparisons. A useful improvement would be to detect sustained abnormal patterns over consecutive samples and incorporate ERROR log severity more explicitly into the scoring logic.

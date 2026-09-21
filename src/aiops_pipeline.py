@@ -21,7 +21,7 @@ def run_pipeline(file_path):
     producer = EventProducer(producer_topic)
 
     # INTENTIONAL ASSESSMENT ISSUE #3
-    consumer_topic = EventTopic("anomaly-events")
+    consumer_topic = EventTopic(producer_topic.name)
     consumer = EventConsumer(consumer_topic)
 
     detected_events = []
@@ -55,7 +55,7 @@ if __name__ == "__main__":
 
     print("\nDetected Events:")
 
-    for event in result["events_consumed"]:
+    for event in result['anomalies_detected']:
         print(f"\nService: {event['service']}")
         print(f"Timestamp: {event['timestamp']}")
         print(f"Type: {event['type']}")
